@@ -1,4 +1,4 @@
-#' Save mapview or leaflet map as HTML and/or image
+#' Save mapview or leaflet map as HTML and/or image (using webshot2)
 #'
 #' @description
 #' Save a mapview or leaflet map as \code{.html} index file or \code{.png},
@@ -98,7 +98,7 @@ mapshot = function(x,
 
   ## the arguments to be passed to webshot
   ws_args = match.arg(names(args),
-                      names(as.list(args(webshot::webshot))),
+                      names(as.list(args(webshot2::webshot))),
                       several.ok = TRUE)
 
 
@@ -110,7 +110,7 @@ mapshot = function(x,
 
     ## if no junk to remove -> take webshot straight away & return
     if (is.null(remove_controls)) {
-      do.call(webshot::webshot, args)
+      do.call(webshot2::webshot, args)
       return(invisible())
     }
 
@@ -124,7 +124,7 @@ mapshot = function(x,
     x = removeMapJunk(x, remove_controls)
 
     do.call(htmlwidgets::saveWidget, append(list(x), sw_ls[sw_args]))
-    do.call(webshot::webshot, args[ws_args])
+    do.call(webshot2::webshot, args[ws_args])
 
     return(invisible())
 

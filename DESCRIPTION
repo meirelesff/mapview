@@ -1,5 +1,5 @@
-Package: mapview
-Title: Interactive Viewing of Spatial Data in R
+Package: mapview2
+Title: Interactive Viewing of Spatial Data in R (using webshot2)
 Version: 2.10.4.9005
 Authors@R: 
     c(person(given = "Tim",
@@ -78,6 +78,7 @@ Imports:
     sf,
     sp,
     webshot
+    webshot2
 Suggests:
     covr,
     knitr,
@@ -93,6 +94,7 @@ Suggests:
     s2,
     stars,
     tinytest
+Remotes: rstudio/webshot2
 ByteCompile: yes
 Encoding: UTF-8
 LazyData: TRUE
