@@ -77,7 +77,6 @@ Imports:
     servr,
     sf,
     sp,
-    webshot,
     webshot2
 Suggests:
     covr,
